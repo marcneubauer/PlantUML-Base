@@ -165,7 +165,6 @@ skinparam arrow {
 !endsub
 
 !startsub sequence
-'autonumber
 skinparam sequence {
 	BorderColor $PRIMARY
 	' For some reason sequence title font color does not pick up from global
