@@ -33,7 +33,7 @@ skinparam backgroundColor $BGCOLOR
 !$DANGER = "#e51c23"
 !$LIGHT = "#fff"
 !$DARK = "#222"
-!$DARKGREEN = "#darkgreen"
+!$DARKGREEN = "#lightgreen"
 
 '' *_LIGHT = tint (lighter) of the main color of 80%
 ''          where TINT is calculated by clr + (255-clr) * tint_factor
