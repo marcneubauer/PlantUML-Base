@@ -33,7 +33,7 @@ skinparam backgroundColor $BGCOLOR
 !$DANGER = "#e51c23"
 !$LIGHT = "#fff"
 !$DARK = "#222"
-!$DARKGREEN = "#lightgreen"
+!$DARKGREEN = "#darkgreen"
 
 '' *_LIGHT = tint (lighter) of the main color of 80%
 ''          where TINT is calculated by clr + (255-clr) * tint_factor
@@ -165,6 +165,7 @@ skinparam arrow {
 !endsub
 
 !startsub sequence
+autonumber
 skinparam sequence {
 	BorderColor $PRIMARY
 	' For some reason sequence title font color does not pick up from global
