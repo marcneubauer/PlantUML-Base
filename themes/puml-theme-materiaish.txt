@@ -1,16 +1,9 @@
-''
-'' materia theme based off of the bootstrap theme of the same name
-'' https://bootswatch.com/materia/
-''
-'' Author: Brett Schwarz
-'' Copyright (c) 2019 by Brett Schwarz
-'' also https://gist.githubusercontent.com/aYoshikazuNakase/43b6a7520a75e54076211b2f333f320d/raw/a009148279b70f07515419159ba4788b313435b4/style.conf
+'!include https://raw.githubusercontent.com/marcneubauer/PlantUML-Base/main/themes/puml-theme-materiaish.txt
 
 
 !$THEME = "materia-outline"
 
 !if %not(%variable_exists("$BGCOLOR"))
-	skinparam backgroundColor #FFFFFE
 	!$BGCOLOR = "#FFFFFE"
 !endif
 
@@ -100,7 +93,8 @@ skinparam Padding               2
 skinparam TitleFontColor	    $DARK
 skinparam TitleFontSize	    	20
 skinparam TitleBorderThickness 	0
-skinparam ArrowColor            #darkgreen
+skinparam ArrowColor $DARKGREEN
+
 skinparam stereotype {
     CBackgroundColor $SECONDARY_LIGHT
     CBorderColor $SECONDARY_DARK
@@ -171,7 +165,7 @@ skinparam arrow {
 !endsub
 
 !startsub sequence
-
+autonumber
 skinparam sequence {
 	BorderColor $PRIMARY
 	' For some reason sequence title font color does not pick up from global
@@ -201,8 +195,11 @@ skinparam sequence {
 	ReferenceBorderColor $GRAY
 	ReferenceFontColor $DARK
 	ReferenceHeaderFontColor $INFO
+	ArrowColor $DARKGREEN
+
 }
 !endsub
+
 
 !startsub partition
 
@@ -437,9 +434,9 @@ skinparam state {
 
 skinparam queue {
 	$primary_scheme()
-	' BackgroundColor $BGCOLOR
-  	' BorderColor $WARNING_DARK
-	' FontColor $WARNING_TEXT
+	 BackgroundColor $BGCOLOR
+'  	 BorderColor $WARNING_DARK
+'	 FontColor $WARNING_TEXT
 }
 !endsub
 
@@ -471,3 +468,9 @@ skinparam stack {
 	' FontColor $PRIMARY_TEXT
 }
 !endsub
+
+'' Based on based on based on
+'' materia theme based off of the bootstrap theme of the same name
+'' https://bootswatch.com/materia/
+'' Author: Brett Schwarz Copyright (c) 2019 by Brett Schwarz
+'' also based off https://gist.githubusercontent.com/aYoshikazuNakase/43b6a7520a75e54076211b2f333f320d/raw/a009148279b70f07515419159ba4788b313435b4/style.conf
