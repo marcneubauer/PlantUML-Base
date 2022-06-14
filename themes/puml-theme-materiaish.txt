@@ -40,7 +40,7 @@ skinparam backgroundColor $BGCOLOR
 !$DANGER = "#e51c23"
 !$LIGHT = "#fff"
 !$DARK = "#222"
-!$DARK_GREEN = "#darkgreen"
+!$DARKGREEN = "#darkgreen"
 
 '' *_LIGHT = tint (lighter) of the main color of 80%
 ''          where TINT is calculated by clr + (255-clr) * tint_factor
@@ -100,7 +100,7 @@ skinparam Padding               2
 skinparam TitleFontColor	    $DARK
 skinparam TitleFontSize	    	20
 skinparam TitleBorderThickness 	0
-skinparam ArrowColor            $DARK_GREEN
+skinparam ArrowColor            $DARKGREEN
 skinparam stereotype {
     CBackgroundColor $SECONDARY_LIGHT
     CBorderColor $SECONDARY_DARK
