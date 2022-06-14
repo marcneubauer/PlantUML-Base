@@ -10,8 +10,8 @@
 !$THEME = "materia-outline"
 
 !if %not(%variable_exists("$BGCOLOR"))
-''!$BGCOLOR = "transparent"
-!$BGCOLOR = "#ffffff"
+	skinparam backgroundColor #FFFFFE
+	!$BGCOLOR = "#FFFFFE"
 !endif
 
 skinparam backgroundColor $BGCOLOR
@@ -40,6 +40,7 @@ skinparam backgroundColor $BGCOLOR
 !$DANGER = "#e51c23"
 !$LIGHT = "#fff"
 !$DARK = "#222"
+!$DARK_GREEN = "#darkgreen"
 
 '' *_LIGHT = tint (lighter) of the main color of 80%
 ''          where TINT is calculated by clr + (255-clr) * tint_factor
@@ -99,7 +100,7 @@ skinparam Padding               2
 skinparam TitleFontColor	    $DARK
 skinparam TitleFontSize	    	20
 skinparam TitleBorderThickness 	0
-skinparam ArrowColor            $GRAY
+skinparam ArrowColor            $DARK_GREEN
 skinparam stereotype {
     CBackgroundColor $SECONDARY_LIGHT
     CBorderColor $SECONDARY_DARK
