@@ -100,7 +100,7 @@ skinparam Padding               2
 skinparam TitleFontColor	    $DARK
 skinparam TitleFontSize	    	20
 skinparam TitleBorderThickness 	0
-skinparam ArrowColor            $DARKGREEN
+skinparam ArrowColor            "#darkgreen"
 skinparam stereotype {
     CBackgroundColor $SECONDARY_LIGHT
     CBorderColor $SECONDARY_DARK
