@@ -125,14 +125,13 @@ skinparam legend {
 !startsub activity
 
 skinparam activity {
-	$primary_scheme()
-	' FontColor $PRIMARY_TEXT
+	FontColor $PRIMARY_TEXT
 	BorderColor $PRIMARY
-	' BackgroundColor $BGCOLOR
+	BackgroundColor $BGCOLOR
 	BarColor   $SUCCESS
 	StartColor $INFO
 	EndColor   $INFO
-	''
+	
 	DiamondBackgroundColor $BGCOLOR
   	DiamondBorderColor $SECONDARY_DARK
 	DiamondFontColor $PRIMARY_TEXT
@@ -142,7 +141,9 @@ skinparam activity {
 !startsub participant
 
 skinparam participant {
-	$primary_scheme()
+	FontColor $PRIMARY_TEXT
+	BorderColor $PRIMARY
+	BackgroundColor $BGCOLOR
 	ParticipantBorderThickness 2
 }
 !endsub
@@ -150,7 +151,9 @@ skinparam participant {
 !startsub actor
 
 skinparam actor {
-	$primary_scheme()
+	FontColor $PRIMARY_TEXT
+	BorderColor $PRIMARY
+	BackgroundColor $BGCOLOR
 	' FontColor $DARK
 }
 !endsub
@@ -213,39 +216,36 @@ skinparam partition {
 !startsub collections
 
 skinparam collections {
-	$primary_scheme()
-	' BackgroundColor $BGCOLOR
-	' BorderColor $PRIMARY
+	FontColor $PRIMARY_TEXT
+	BorderColor $PRIMARY
+	BackgroundColor $BGCOLOR
 }
 !endsub
 
 !startsub control
 
 skinparam control {
-	$primary_scheme()
-	' BackgroundColor  $BGCOLOR
-	' BorderColor $PRIMARY_DARK
-	' FontColor $DARK
+	FontColor $PRIMARY_TEXT
+	BorderColor $PRIMARY
+	BackgroundColor $BGCOLOR
 }
 !endsub
 
 !startsub entity
 
 skinparam entity {
-	$primary_scheme()
-	' BackgroundColor  $BGCOLOR
-	' BorderColor $PRIMARY_DARK
-	' FontColor $DARK
+	FontColor $PRIMARY_TEXT
+	BorderColor $PRIMARY
+	BackgroundColor $BGCOLOR
 }
 !endsub
 
 !startsub boundary
 
 skinparam boundary {
-	$primary_scheme()
-	' BackgroundColor  $BGCOLOR
-	' BorderColor $PRIMARY_DARK
-	' FontColor $DARK
+	FontColor $PRIMARY_TEXT
+	BorderColor $PRIMARY
+	BackgroundColor $BGCOLOR
 }
 !endsub
 
@@ -280,10 +280,9 @@ skinparam artifact {
 !startsub component
 
 skinparam component {
-	$primary_scheme()
-	' BackgroundColor  $BGCOLOR
-	' BorderColor  $SUCCESS
-	' FontColor $SUCCESS_TEXT
+	FontColor $PRIMARY_TEXT
+	BorderColor $PRIMARY
+	BackgroundColor $BGCOLOR
 }
 !endsub
 
@@ -326,17 +325,18 @@ skinparam cloud {
 !startsub database
 
 skinparam database {
-	$primary_scheme()
-	' BackgroundColor  $BGCOLOR
-	' BorderColor $PRIMARY_DARK
-	' FontColor $DARK
+	FontColor $PRIMARY_TEXT
+	BorderColor $PRIMARY
+	BackgroundColor $BGCOLOR
 }
 !endsub
 
 !startsub class
 
 skinparam class {
-	$primary_scheme()
+	FontColor $PRIMARY_TEXT
+	BorderColor $PRIMARY
+	BackgroundColor $BGCOLOR
 	HeaderBackgroundColor $PRIMARY-$PRIMARY_DARK
 	' FontColor $PRIMARY_TEXT
 	' BackgroundColor $BGCOLOR
@@ -351,7 +351,9 @@ skinparam class {
 !startsub object
 
 skinparam object {
-	$primary_scheme()
+	FontColor $PRIMARY_TEXT
+	BorderColor $PRIMARY
+	BackgroundColor $BGCOLOR
 	' FontColor $SUCCESS
 	' BackgroundColor $BGCOLOR
 	' BorderColor $SECONDARY_DARK
@@ -365,7 +367,9 @@ skinparam object {
 !startsub usecase
 
 skinparam usecase {
-	$primary_scheme()
+	FontColor $PRIMARY_TEXT
+	BorderColor $PRIMARY
+	BackgroundColor $BGCOLOR
 	' BackgroundColor $BGCOLOR
 	' BorderColor $SECONDARY_DARK
 	BorderThickness 2
@@ -377,7 +381,9 @@ skinparam usecase {
 !startsub rectangle
 
 skinparam rectangle {
-	$primary_scheme()
+	FontColor $PRIMARY_TEXT
+	BorderColor $PRIMARY
+	BackgroundColor $BGCOLOR
 	' BackgroundColor $BGCOLOR
 	BorderColor $SECONDARY_DARK
 	BorderThickness 2
@@ -419,7 +425,9 @@ skinparam frame {
 !startsub state
 
 skinparam state {
-	$primary_scheme()
+	FontColor $PRIMARY_TEXT
+	BorderColor $PRIMARY
+	BackgroundColor $BGCOLOR
 	StartColor $INFO
 	EndColor $INFO
 	' BackgroundColor $BGCOLOR
@@ -433,7 +441,9 @@ skinparam state {
 !startsub queue
 
 skinparam queue {
-	$primary_scheme()
+	FontColor $PRIMARY_TEXT
+	BorderColor $PRIMARY
+	BackgroundColor $BGCOLOR
 	 BackgroundColor $BGCOLOR
 '  	 BorderColor $WARNING_DARK
 '	 FontColor $WARNING_TEXT
@@ -462,7 +472,9 @@ skinparam file {
 !startsub stack
 
 skinparam stack {
-	$primary_scheme()
+	FontColor $PRIMARY_TEXT
+	BorderColor $PRIMARY
+	BackgroundColor $BGCOLOR
 	' BackgroundColor $BGCOLOR
 	' BorderColor $PRIMARY
 	' FontColor $PRIMARY_TEXT
