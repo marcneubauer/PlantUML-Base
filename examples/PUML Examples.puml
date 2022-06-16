@@ -3,6 +3,12 @@
 
 @startuml
 title Activity Diagram
+'!theme blueprint
+!theme crt-green
+'!theme crt-amber
+'!theme sketchy
+'!include https://raw.githubusercontent.com/marcneubauer/PlantUML-Base/main/themes/puml-theme-materiaish.txt
+'
 
 (*) --> "ClickServlet.handleRequest()"
 --> "new Page"
