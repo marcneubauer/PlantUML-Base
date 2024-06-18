@@ -25,7 +25,15 @@
     participant BMI as oms
     participant epcc as "EPCC"
 
-    autonumber
+
+
+
+    autonumber 100 100 "<b>[00]"
+    autonumber 100 100 "<b>(<u>##</u>)"
+    autonumber 100 100  "<font color=red><b>Message 0 "
+
+
+
 
 
 |||

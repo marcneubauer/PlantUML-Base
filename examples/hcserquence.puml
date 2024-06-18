@@ -1,341 +1,3 @@
-## Fun with PantUML
-
-
-@startuml
-title Activity Diagram
-'!theme blueprint
-'!theme crt-green
-'!theme crt-amber
-'!theme sketchy
-!include https://raw.githubusercontent.com/marcneubauer/PlantUML-Base/main/themes/puml-theme-materiaish.txt
-
-
-
-(*) --> "ClickServlet.handleRequest()"
---> "new Page"
-if "Page.onSecurityCheck" then
-  ->[true] "Page.onInit()"
-
-  if "isForward?" then
-   ->[no] "Process controls"
-
-   if "continue processing?" then
-     -->[yes] ===RENDERING===
-   else
-     -->[no] ===REDIRECT_CHECK===
-   endif
-
-  else
-   -->[yes] ===RENDERING===
-  endif
-
-  if "is Post?" then
-    -->[yes] "Page.onPost()"
-    --> "Page.onRender()" as render
-    --> ===REDIRECT_CHECK===
-  else
-    -->[no] "Page.onGet()"
-    --> render
-  endif
-
-else
-  -->[false] ===REDIRECT_CHECK===
-endif
-@enduml
-
-@startuml
-title Activityyyyyyyyyyyyyyyyyyyy Diagram
-
-(*) --> "ClickServlet.handleRequest()"
---> "new Page"
-
-if "Page.onSecurityCheck" then
-  ->[true] "Page.onInit()"
-
-  if "isForward?" then
-   ->[no] "Process controls"
-
-   if "continue processing?" then
-     -->[yes] ===RENDERING===
-   else
-     -->[no] ===REDIRECT_CHECK===
-   endif
-
-  else
-   -->[yes] ===RENDERING===
-  endif
-
-  if "is Post?" then
-    -->[yes] "Page.onPost()"
-    --> "Page.onRender()" as render
-    --> ===REDIRECT_CHECK===
-  else
-    -->[no] "Page.onGet()"
-    --> render
-  endif
-
-else
-  -->[false] ===REDIRECT_CHECK===
-endif
-
-if "Do redirect?" then
- ->[yes] "redirect request"
- --> ==BEFORE_DESTROY===
-else
- if "Do Forward?" then
-  -left->[yes] "Forward request"
-  --> ==BEFORE_DESTROY===
- else
-  -right->[no] "Render page template"
-  --> ==BEFORE_DESTROY===
- endif
-endif
-
---> "Page.onDestroy()"
--->(*)
-
-@enduml
-
-
-
-
-@startuml
-'Entities
-'https://plantuml.com/deployment-diagram
-
-actor actor
-actor/ "actor/"
-agent agent
-artifact artifact
-boundary boundary
-card card
-circle circle
-cloud cloud
-collections collections
-component component
-control control
-database database
-entity entity
-file file
-folder folder
-frame frame
-interface interface
-label label
-node node
-package package
-queue queue
-rectangle rectangle
-stack stack
-storage storage
-usecase usecase
-usecase/ "usecase/"
-@enduml
-
-'===Lots of Arrows====>
-@startuml
-title Lots of Arrows
-group Arrows
-    Bob ->x Alice
-    Bob -> Alice
-    Bob ->> Alice
-    Bob -\ Alice
-    Bob \\- Alice
-    Bob //-- Alice
-    Bob ->o Alice
-    Bob o\\-- Alice
-    Bob <- Alice
-    Bob <-> Alice
-    critical oops
-        Bob <-[#green]x Alice
-    end
-end
-@enduml
-
-'Sprites!
-@startuml
-
-!define osaPuml https://raw.githubusercontent.com/Crashedmind/PlantUML-opensecurityarchitecture2-icons/master
-!include osaPuml/Common.puml
-!include osaPuml/User/all.puml
-!include osaPuml/Hardware/all.puml
-!include osaPuml/Misc/all.puml
-!include osaPuml/Server/all.puml
-!include osaPuml/Site/all.puml
-
-listsprites
-
-@enduml
-
-`Draft with handwritten mode
-@startuml
-title Doing Stuff with PlantUML
-skinparam handwritten true
-
-ThisIs -> ADraft
-
-@enduml
-
-`Network Diagram
-@startuml
-
-!define osaPuml https://raw.githubusercontent.com/Crashedmind/PlantUML-opensecurityarchitecture2-icons/master
-!include osaPuml/Common.puml
-!include osaPuml/User/all.puml
-!include osaPuml/Hardware/all.puml
-!include osaPuml/Misc/all.puml
-!include osaPuml/Server/all.puml
-!include osaPuml/Site/all.puml
-
-'. Mary is a Developer in the Product team. She has a Windows 10 PC and an Android phone.
-'. Bob is a Manager in the Accounts team. He has Mac and an iPhone.
-'. Ivan is an IT guy who looks after the server.
-'. They connect to the network hub, and via a firewall to the Internet.
-
-skinparam backgroundcolor #473434
-
-' Users
-together {
-osa_user_green_developer(Mary, "Mary", "Product team", "Developer")
-osa_user_green_operations(Ivan, "Ivan", "IT Team", "Server Admin")
-osa_user_green_business_manager(Bob, "Bob", "Accounts team", "Manager")
-}
-
-' Devices
-together {
-osa_laptop(mac, "192.168.1.12", "Mac", "Mac")
-osa_desktop(pc, "192.168.1.10", "Windows 10", "PC")
-osa_iPhone(iphone, "Dynamic IP", "iPhone 11", "Phone")
-osa_iPhone(android, "Dynamic IP", "Android 10", "Phone")
-osa_server(server, "192.168.1.100", "Ubuntu Server 20.04 LTS", "Server")
-}
-
-
-' Network
-
-osa_device_wireless_router(wifiAP, "192.168.1.1", "Network")
-osa_hub(hub, "Office hub", "Hub")
-osa_firewall(firewall, "51.37.24.103", "Network")
-osa_cloud(cloud, "Internet", "Network")
-
-
-Mary -> pc: source code
-Mary --> android: social media
-
-Bob --> mac: financial info
-Bob --> iphone: phone calls
-
-
-Ivan --> server: configuration
-
-iphone <--> wifiAP
-android --> wifiAP
-wifiAP --> hub
-
-server --> hub
-mac --> hub
-pc --> hub
-
-
-hub -left-> firewall
-
-firewall --down--> cloud
-
-footer %filename() rendered with PlantUML version %version()\nThe Hitchhiker’s Guide to PlantUML
-@enduml
-
-'Entities
-@startuml
-'https://plantuml.com/deployment-diagram
-skinparam backgroundcolor #Lavender
-
-actor actor
-actor/ "actor/"
-agent agent
-artifact artifact
-boundary boundary
-card card
-circle circle
-cloud cloud
-collections collections
-component component
-control control
-database database
-entity entity
-file file
-folder folder
-frame frame
-interface interface
-label label
-node node
-package package
-queue queue
-rectangle rectangle
-stack stack
-storage storage
-usecase usecase
-usecase/ "usecase/"
-@enduml
-
-
-
-
-
-
-
-
-
-
-
-`AWS
-@startuml
-title Doing Stuff with PlantUML
-skinparam backgroundcolor #473434
-
-' skinparam linetype polyline
- skinparam linetype ortho
-
-'package "AWS Cloud" {
-'EC2(Smadex, "Smadex Service", " ")
-'}
-
-
-'!define awsLib https://github.com/plantuml/plantuml-stdlib/tree/master/awslib
-!include <awslib/AWSCommon>
-'!include <awslib/AWSSimplified.puml>
-!include <awslib/Compute/all.puml>
-'!include <awslib/mobile/all.puml>
-'!include <awslib/general/all.puml>
-'!include <awslib/GroupIcons/all.puml>
-
-listsprites
-
-@enduml
-
-
-
-
-
-`Tip
-@startuml
-title Doing Stuff with PlantUML
-skinparam backgroundcolor #473434
-@enduml
-
-
-
-
-@startuml
-'https://plantuml.com/sequence-diagram
-
-autonumber
-
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
-@enduml
-
 # PlantUMLs
 @startuml
 ```
@@ -741,62 +403,62 @@ Alice <-- Bob: another authentication Response
 '    box Netlify : <img:https://www.netlify.com/img/press/logos/full-logo-light.png{scale=0.1}>
         participant backend as "AWS\nƛ"
     end box
-'    box WorldPay
-'    box WorldPay: <img:https://www.salesforce.com/content/dam/web/en_us/www/images/commerce-cloud/partners/worldpay-logo-2.png>
-'        participant epro as "eProtect"
-'        participant cnp as "cnpApi"
-'    end box
-'    participant BMI as oms
-'    participant epcc as "EPCC"
-'
-'    autonumber
-'
-'
-'|||
-'== Navigate to Checkout Form ==
-'    browser -> epcc: Automatically Create Cart and Add Offer Items to Cart.
-'    'note left of epcc: EPCC: Cart created.
-'    activate browser #lightgray
-'    activate epcc #lightblue
-'    epcc -> browser : {cart_reference_id}
-'    deactivate epcc
-'
-'
-'|||
-'    group EPCC Cart Interaction Details
-'        browser --> epcc : Create and Add Offer Items to Cart.
-'        activate epcc #lightblue
-'        group Responses  [error]
-'            epcc -[#f07575]> browser: Error Creating/Adding To Cart
-'        else success
-'            epcc -> browser: {cart_reference_id}
-'            deactivate epcc
-'        end
-'    end
-'
-'
-'|||
-'== Enter CC#, CVV into Checkout Form ==
-'    browser o-> epro : Tokenize PCI Data
-'    activate epro #black
-'    epro -> browser : {RegistrationId}
-'    note right #gray: RegistrationId is a long length, low-value token,\n MOD10+1 compliant, with no format preservation,\nand a 24 hour lifetime.
-'    deactivate epro
-'
-'    group eProtect Details
-'        note right of browser: { cart_reference_id, CC#, CVV }
-'        browser -> epro : Tokenize PCI Data
-'        activate epro #black
-'        group Responses [error]
-'            epro -[#f07575]> browser : {response.code, response.message}
-'            note right #gray: Error Messages shown near iFrame fields.
-'        else success
-'            epro -> browser : {paypageRegistrationId, response.expMonth, response.expYear, response.type}
-'            deactivate epro
-'            note right #gray: paypageRegistrationId is a long length,\nlow-value token, MOD10+1 compliant,\nwith no format preservation, and a 24h life.
-'        end
-'    end
-'
+    box WorldPay
+    box WorldPay: <img:https://www.salesforce.com/content/dam/web/en_us/www/images/commerce-cloud/partners/worldpay-logo-2.png>
+        participant epro as "eProtect"
+        participant cnp as "cnpApi"
+    end box
+    participant BMI as oms
+    participant epcc as "EPCC"
+
+    autonumber
+
+
+|||
+== Navigate to Checkout Form ==
+    browser -> epcc: Automatically Create Cart and Add Offer Items to Cart.
+    'note left of epcc: EPCC: Cart created.
+    activate browser #lightgray
+    activate epcc #lightblue
+    epcc -> browser : {cart_reference_id}
+    deactivate epcc
+
+
+|||
+    group EPCC Cart Interaction Details
+        browser --> epcc : Create and Add Offer Items to Cart.
+        activate epcc #lightblue
+        group Responses  [error]
+            epcc -[#f07575]> browser: Error Creating/Adding To Cart
+        else success
+            epcc -> browser: {cart_reference_id}
+            deactivate epcc
+        end
+    end
+
+
+|||
+== Enter CC#, CVV into Checkout Form ==
+    browser o-> epro : Tokenize PCI Data
+    activate epro #black
+    epro -> browser : {RegistrationId}
+    note right #gray: RegistrationId is a long length, low-value token,\n MOD10+1 compliant, with no format preservation,\nand a 24 hour lifetime.
+    deactivate epro
+
+    group eProtect Details
+        note right of browser: { cart_reference_id, CC#, CVV }
+        browser -> epro : Tokenize PCI Data
+        activate epro #black
+        group Responses [error]
+            epro -[#f07575]> browser : {response.code, response.message}
+            note right #gray: Error Messages shown near iFrame fields.
+        else success
+            epro -> browser : {paypageRegistrationId, response.expMonth, response.expYear, response.type}
+            deactivate epro
+            note right #gray: paypageRegistrationId is a long length,\nlow-value token, MOD10+1 compliant,\nwith no format preservation, and a 24h life.
+        end
+    end
+
 
 |||
 == Click "Place Order" ==
@@ -915,7 +577,6 @@ deactivate backend
 '    deactivate browser
 
 @enduml
-```
----
 
-@enduml
+
+
